@@ -5,10 +5,22 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in active_record_has.gemspec
 gemspec
 
-gem "rake", "~> 13.0"
+ruby "3.3.3"
 
-gem "rspec", "~> 3.0"
+gem "bootsnap", require: false
+gem "puma"
+gem "rails", ">= 7.1"
+gem "rake"
+gem "sqlite3", "~> 1.4"
+gem "tzinfo-data", platforms: %i[windows jruby]
 
-gem "rubocop", "~> 1.21"
+group :development, :test do
+  gem "data_imp"
+  gem "debug", platforms: %i[mri windows]
+  gem "rspec-rails"
+  gem "rubocop"
+end
 
-gem "activerecord", "~> 7.1"
+group :development do
+  gem "web-console"
+end
